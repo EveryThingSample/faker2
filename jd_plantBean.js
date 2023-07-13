@@ -781,6 +781,13 @@ function shareCodesFormat() {
   return new Promise(async resolve => {
     console.log(`第${$.index}个京东账号的助力码:::${jdPlantBeanShareArr[$.index - 1]}`)
     newShareCodes = [];
+ var j = 0;
+        for(var i = 0; i < jdPlantBeanShareArr.length;i++)
+        {
+            if (i+1 == $.index)
+            continue;
+            newShareCodes[j++] = jdPlantBeanShareArr[i];
+        }
 
 
     const readShareCodeRes = await readShareCode(jdPlantBeanShareArr[$.index - 1]);
