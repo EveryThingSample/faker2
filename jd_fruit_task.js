@@ -1391,6 +1391,13 @@ function shareCodesFormat() {
     return new Promise(async (resolve) => {
         console.log(`第${$.index}个京东账号的助力码:::${$.shareCodesArr[$.index - 1]}`)
         newShareCodes = [];
+        var j = 0;
+        for(var i = 0; i < $.shareCodesArr.length;i++)
+        {
+            if (i+1 == $.index)
+            continue;
+            newShareCodes[j++] = $.shareCodesArr[i];
+        }
         const readShareCodeRes = await readShareCode($.shareCodesArr[$.index - 1]);
         if (readShareCodeRes && readShareCodeRes.code === 200) {
             newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
