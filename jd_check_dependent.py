@@ -130,7 +130,7 @@ def check_ld_libc(version):
                 print("❌arm64-libc依赖安装失败,请前往Faker TG群查看安装教程\n")
 
 def download(version, systemFile):
-    raw_url = f"https://proxy.zyun.vip/https://github.com/HarbourJ/HarbourToulu/releases/download/{version}/{systemFile}"
+    raw_url = f"https://ghproxy.com/https://github.com/HarbourJ/HarbourToulu/releases/download/{version}/{systemFile}"
     try:
         fileList = os.listdir()
         if systemFile in fileList:
@@ -185,7 +185,7 @@ def signReleaseUpdate():
     """
     判断Release内的主要文件是否更新(判断utils内版本更新log文件-signUpdateLog.log)
     """
-    GitAPI = "https://proxy.zyun.vip/https://raw.githubusercontent.com/HarbourJ/HarbourToulu/main/utils/signUpdateLog.log"
+    GitAPI = "https://ghproxy.com/https://raw.githubusercontent.com/HarbourJ/HarbourToulu/main/utils/signUpdateLog.log"
     # try:
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
